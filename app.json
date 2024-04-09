@@ -21,10 +21,23 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.jokwuafor.melvera"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "680a6a68-c05c-4fa8-8018-cddaf8718636"
+      }
+    },
+    "owner": "jokwuafor",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/680a6a68-c05c-4fa8-8018-cddaf8718636"
     }
   }
 }

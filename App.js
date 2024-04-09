@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useEffect, useState } from "react";
+import Navigation from "./Navigation";
+import * as Font from "expo-font";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  useEffect(() => {
+    const loadFonts = async () => {
+      await Font.loadAsync({
+        "Trap-Regular": require("./assets/fonts/Trap-Regular.otf"),
+        "Trap-Bold": require("./assets/fonts/Trap-Bold.otf"),
+        "Trap-Medium": require("./assets/fonts/Trap-Medium.otf"),
+        "Trap-Light": require("./assets/fonts/Trap-Light.otf"),
+      });
+      setFontsLoaded(true);
+    };
+
+    loadFonts();
+  }, []);
+
+  if (!fontsLoaded) {
+    return null; // You can also return a loading indicator here
+  }
+
+  return <Navigation />;
+}
