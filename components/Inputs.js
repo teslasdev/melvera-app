@@ -3,14 +3,19 @@ import { View, TextInput, Image, Text, StyleSheet, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import DateTimePicker from "@react-native-community/datetimepicker";
 
-export const PrimaryInput = ({ style, placeholder }) => {
+export const PrimaryInput = ({ style, placeholder , label , secureTextEntry , value}) => {
   return (
-    <View className={`${style}`}>
-      <TextInput
-        className="w-full h-full border-none rounded-[26px] text-white px-4 font-trap-regular"
-        placeholder={placeholder}
-        placeholderTextColor={"#D1D1D6"}
-      />
+    <View className="w-full">
+      {label && <Text className="p-2 text-white font-trap-medium">{label}</Text>}
+      <View className={`${style}`}>
+        <TextInput
+          className="w-full h-full border-none rounded-[26px] text-white px-4 font-trap-regular"
+          placeholder={placeholder}
+          placeholderTextColor={"#D0D0D0"}
+          secureTextEntry={secureTextEntry}
+          value={value}
+        />
+      </View>
     </View>
   );
 };
@@ -28,7 +33,7 @@ export const PasswordInput = ({ style, placeholder }) => {
       <TextInput
         className="w-[80%] h-full border-none rounded-[26px] text-white px-1 font-trap-regular"
         placeholder={placeholder}
-        placeholderTextColor={"#D1D1D6"}
+        placeholderTextColor={"#D0D0D0"}
         secureTextEntry={visible}
       />
       <TouchableOpacity

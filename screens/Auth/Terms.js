@@ -33,7 +33,7 @@ const Terms = ({ navigation }) => {
         <View className="h-[50vh] flex justify-center items-center w-full">
           <View className="h-[40%] flex items-center  w-full">
             <Image
-              source={require("../../assets/logo.png")}
+              source={require("../../assets/Logo.png")}
               className="w-[75px] h-[57px]"
             />
           </View>

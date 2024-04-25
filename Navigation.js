@@ -19,6 +19,9 @@ import Wallet from "./screens/Main/Wallet";
 import Address from "./screens/Main/Address";
 import ContactUs from "./screens/Main/Contact";
 import Message from "./screens/Main/Message";
+import PaymentMethod from "./screens/Main/PaymentMethod";
+import AddCard from "./screens/Main/AddCard";
+import AddMoney from "./screens/Main/AddMoney";
 
 const Stack = createStackNavigator();
 
@@ -118,6 +121,22 @@ export default function Navigation() {
         <Stack.Screen
           name="ContactUs"
           component={ContactUs}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="PaymentMethod"
+          component={PaymentMethod}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="AddCard"
+          component={AddCard}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="AddMoney"
+          component={AddMoney}
           options={{ headerShown: false }}
         />
 
